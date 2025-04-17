@@ -1,0 +1,48 @@
+<p>databinding works!</p>
+<div class="row">
+    <div class="col-6">
+        <h1>interpolation</h1>
+        <h1>name is {{firstName}}</h1>
+    </div>
+    <div class="col-6">
+        <h1>property binding</h1>
+        <input type="text" [value]="firstName" name="" id="">
+        <input type="text" [placeholder]="placeholder">
+    </div>
+    <div class="col-6">
+        <h1>event binding</h1>
+        <button class="btn btn-success"  (click)="showMessag()"> show alert </button>
+    </div>
+
+    <div class="col-6">
+      <select name="" id="" (change)= "showChang()">
+        <option value="Pune">Pune</option>
+        <option value="kerala">kerala</option>
+        <option value="delhi">delhi</option>
+        <option value="goa">goa</option>
+      </select>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <h1>ngmodel</h1>
+            <input type="text" [(ngModel)]="firstName">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <h1>ngmodel</h1>
+            <input type="text"  placeholder="change placeholder" [(ngModel)]="placeholder">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <h1>ngmodel</h1>
+            <input type="text" placeholder="change number" [(ngModel)]="rollNo">
+        </div>
+    </div>
+
+    
+
+
+</div>

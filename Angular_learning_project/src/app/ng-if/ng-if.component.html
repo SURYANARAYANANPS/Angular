@@ -1,0 +1,29 @@
+<div class="text-center" style="padding: 15px;border: 10px;">
+    <div class="row">
+        <div class="col-3">
+            <div class="bg-success p-3" *ngIf="divview"> DIV 1</div>
+    
+        </div>
+        <div class="col-3">
+            <div class="bg-primary p-3" *ngIf="num1 == num2"> DIV 2</div>
+    
+        </div>
+    
+    <div class="row pt-2 ">
+        <div class="col-3 text-center">
+            <button class="btn btn-danger" (click)="hidediv()">Hide</button>
+            <button class="btn btn-success mx-4" (click)="shoediv()">show</button>
+    
+        </div>
+        <div class="col-3">
+        
+            <input type="text" [(ngModel)]="num1">
+            <input type="text" [(ngModel)]="num2">
+        </div>
+    </div>
+
+</div>
+
+
+
+  
