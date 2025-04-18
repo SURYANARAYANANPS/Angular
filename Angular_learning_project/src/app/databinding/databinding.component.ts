@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { isDataView } from 'node:util/types';
 
 @Component({
   selector: 'app-databinding',
-  imports: [FormsModule],
+  imports: [FormsModule,RouterLink],
   templateUrl: './databinding.component.html',
   styleUrl: './databinding.component.css'
 })
@@ -17,7 +19,7 @@ export class DatabindingComponent {
   placeholder:string="add your name here"
 
 
-  constructor(){
+  constructor(private router:Router){
     console.log(this.firstName)
   }
   showMessag(){
@@ -26,6 +28,11 @@ export class DatabindingComponent {
 
   showChang(){
     alert("state changed")
+  }
+
+  navigateToAdmin(){
+    this.router.navigateByUrl('/admin')
+
   }
 
 

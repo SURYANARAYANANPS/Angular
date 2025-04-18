@@ -1,0 +1,31 @@
+<p>ng-class works!</p>
+<br>
+<br>
+
+
+<div class="row">
+    <div class="col-3 p-3"  [ngClass]="divBgcolour" >
+        <h1>div 1</h1>
+    </div>
+   <div class="col-3 p-3" [ngClass]="isChecked == true ? 'bg-success':'bg-danger'">  <!-- ternery operator -->
+        <h1>div 2</h1>
+    </div>
+    <div class="col-3 p-3 " [ngClass]="div3className">
+        <h1>div 3</h1>
+    </div>
+</div>
+
+<div class="row pt-3">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="addDiv1Colour('bg-success')">add green</button>
+        <button class="btn btn-danger" (click)="addDiv2Colour('bg-danger')">add red</button>
+    </div>
+    <div class="col-3">
+        <input type="checkbox" name="" id="" [(ngModel)]="isChecked">
+        {{isChecked}}
+    </div>
+
+    <div class="col-3">
+        <input type="text" [(ngModel)]="div3className">
+    </div>
+</div>

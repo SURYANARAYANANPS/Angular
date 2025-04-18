@@ -1,0 +1,108 @@
+<p>conditional works!</p>
+<div class="row">
+    <div class="col-3">
+        @if(divonevisible== true){
+            <div>
+                <h1>one</h1>
+            </div>
+        }
+
+        
+    </div>
+    <div class="col-4">
+        @if(ischecked==true){
+            <div>
+                <h1>checkbox checked</h1>
+            </div>
+
+        }
+     @else{
+        <div>
+            <h1>checkbox unchecked</h1>
+        </div>
+
+     }
+   
+       
+    </div>
+
+    <div class="col-3">
+        @if(dayname=='mon'){
+            <span>Monday </span>
+        }
+        @else if(dayname=='tue'){
+            <span>tuesday </span>
+        }
+        @else if(dayname=='wed'){
+            <span>wednesday </span>
+        }
+        @else if(dayname=='tue'){
+            <span>thursday </span>
+        }
+        @else if(dayname=='fri'){
+            <span>friday </span>
+        }
+        @else if(dayname=='sat'){
+            <span>saturday </span>
+        }
+        @else if(dayname=='sun'){
+            <span>sunday </span>
+        }@else{
+            <span>wrong one selected / nothing selected </span>
+        }
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="viewdiv()">show</button>
+        <button class="btn btn-danger" (click)="hidediv()">hide</button>
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="ischecked">
+    </div>
+
+    <div class="col-3">
+        <input type="text" [(ngModel)]="dayname" maxlength="3" placeholder="enter day short form">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        <select>
+            @for (item of cityList ; track $index){
+                <option>{{item}}</option>
+            }
+        </select>
+    </div>
+
+</div> <br><br><br>
+
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>sr no</th>
+                    <th>roll num</th>
+                    <th>name</th>
+                    <th>number</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @for (item of employeeArray ;track $index){
+                    <tr>
+                        <td>{{$index +1 }}</td>
+                        <td>{{item.empId}}</td>
+                        <td>{{item.empName}}</td>
+                        <td>{{item.empPhone}}</td>
+                        <td>{{item.empLocation}}</td>
+                    </tr>
+                }
+            </tbody>     
+        </table>
+
+    </div>
+</div>
