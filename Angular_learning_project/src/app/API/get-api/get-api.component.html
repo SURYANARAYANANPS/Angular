@@ -1,0 +1,79 @@
+<p>get-api works!</p>
+<div class="row">
+
+    
+
+<div class="container">
+    <br>
+    <div class="col-3"> 
+        <div class="btn btn-success" (click)="getUsers()">Load users</div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-3">
+            <table class="table table-bordered ">
+                <thead>
+                 <tr>
+                    <th>SL no</th>
+                    <th>Name</th>
+                    <th>Username </th>
+                    <th >Address </th>
+                        <!-- <thead>
+                            <tr>
+                                <th>Street</th>
+                                <th>Suite</th>
+                                <th>City</th>
+                                <th>Zip code</th>
+                            </tr>
+                          </thead> -->
+                   
+                    <th>Email </th>
+                    <th>Phone</th>
+                 </tr>
+                </thead>
+                <tbody>
+               @for(item of userList; track $index){
+                <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.address}}</td> 
+<!--                   
+                  <tbody>
+                    <tr>
+                        <th>{{item.address.street}}</th>
+                        <th>{{item.address.suite}}</th>
+                        <th>{{item.address.city}}</th>
+                        <th>{{item.address.zipcode}}</th>
+                    </tr>
+                  </tbody>-->
+                
+                <td>{{item.email}}</td>
+                <td>{{item.phone}}</td>
+
+            </tr>
+
+               }
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div class="container"> <br>
+    <div class="col-3"> 
+        <div class="btn btn-success" (click)="getAllProduct()">Load Products</div>
+    </div> <br>
+    <div class="col-3">
+        <select name="" id="">
+            @for(items of productList; track $index){
+                <option value="">{{items.name}}</option>
+            }
+            
+        </select>
+    </div>
+</div>
+    
+</div>

@@ -1,1 +1,75 @@
-<p>template-forms works!</p>
+<div class="container">
+    <h2 style="text-align: center;">User forms</h2> <br>
+    <form class="row g-3 needs-validation" #form="ngForm" novalidate>
+        <div class="col-md-4">
+          <label class="form-label">First name <span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="firstName" #fname="ngModel" [(ngModel)]="userObj.firstName"  required>
+            
+                <div class="text-danger">
+                    @if(fname.errors?.['required'] && fname.touched  ){
+                    This field is Required
+                }
+                </div>
+            
+         
+        </div>
+        <div class="col-md-4">
+          <label  class="form-label">Last name</label>
+          <input type="text" class="form-control" name="lastName" minlength="4" #flname="ngModel" [(ngModel)]="userObj.lastName" required>
+       <div class="text-danger">
+        
+        <span *ngIf="flname.errors?.['required'] && flname.touched" >
+                This is required
+        </span>
+        <span *ngIf="flname.errors?.['minlength']">
+                need minimum 4 character
+        </span>
+       </div>
+
+        </div>
+        <div class="col-md-4">
+          <label  class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">&#64;</span>
+            <input type="text" class="form-control" name="userName" [(ngModel)]="userObj.userName"  required>
+         
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label  class="form-label">City</label>
+          <input type="text" class="form-control" name="userCity" [(ngModel)]="userObj.userCity"  required>
+      
+        </div>
+        <div class="col-md-3">
+          <label class="form-label">State</label>
+          <select class="form-select"  name="userState" [(ngModel)]="userObj.userState" required>
+            <option selected disabled value="">Choose...</option>
+
+            <option>GOA</option>
+            <option>KERALA</option>
+            <option>TAMILNADU</option>
+            <option>MAHARASTRA</option>
+          </select>
+       
+        </div>
+        <div class="col-md-3">
+          <label  class="form-label">Zip</label>
+          <input type="text" class="form-control" name="userZip" [(ngModel)]="userObj.userZip" required>
+   
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="isAgreed" [(ngModel)]="userObj.isAgreed"  required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="button" [disabled]="form.invalid" (click)="onSave()">Submit form</button>
+        </div>
+      </form>
+</div>
+
+

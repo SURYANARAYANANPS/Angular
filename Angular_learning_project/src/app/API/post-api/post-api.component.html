@@ -1,0 +1,123 @@
+<div style="text-align: center;">
+    <h1>POST API integration using form template</h1>
+</div>
+
+<div class="row pt-2">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    car list
+                </h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Sl</th>
+                        <th scope="col">Brand</th>
+                        <th scope="col">Model</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Colour</th>
+                        <th scope="col">dailyRate</th>
+                        <th scope="col">regNo</th>
+                        <th scope="col">Images</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                        @for(car of carList; track $index){
+                            <tr>
+                                <th>{{$index +1}}</th>
+                                <td>{{car.brand}}</td>
+                                <td>{{car.model}}</td>
+                                <td>{{car.year}}</td>
+                                <td>{{car.color}}</td>
+                                <td>{{car.dailyRate}}</td>
+                                <td>{{car.regNo}}</td>
+                                <td>
+
+                                    <img src="{{car.carImage}}" alt="" srcset="" style="width: 100px; height: 50px;">
+                                </td>
+
+                              </tr>
+
+                        }
+           
+                    </tbody>
+                </table>
+                <button class="btn btn-success" (click)="getCars()">Load cars</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    Add new cars
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <form class="row g-3">
+                        <!-- <div class="col-md-4">
+                          <label  class="form-label">CAR ID</label>
+                          <input type="text" [(ngModel)]="carObj.carId"  name="carId" required>
+                        </div> -->
+                        <div class="col-md-4">
+                          <label class="form-label">Brand</label>
+                          <input type="text" class="form-control" [(ngModel)]="carObj.brand"  name="brand"  required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Model</label>
+                            <input type="text" class="form-control" [(ngModel)]="carObj.model"   name="model" required>
+                          </div>
+                          <div class="col-md-4">
+                            <label class="form-label">Year</label>
+                            <input type="text" class="form-control" [(ngModel)]="carObj.year"  name="year" required>
+                          </div>
+                        <div class="col-md-6">
+                          <label  class="form-label">DailyRate</label>
+                          <input type="text" class="form-control" [(ngModel)]="carObj.dailyRate"  name="dailyRate" required>
+                        </div>
+                        <div class="col-md-3">
+                          <label  class="form-label">Color</label>
+                          <select class="form-control" [(ngModel)]="carObj.color"  name="color" required>
+                            <option selected disabled value="">Nill</option>
+                            <option>Red</option>
+                            <option>Green</option>
+                            <option>Blue</option>
+                            <option>Orange</option>
+                            <option>White</option>
+                          </select>
+                        </div>
+                        <div class="col-md-3">
+                          <label  class="form-label">RegNo</label>
+                          <input type="text" class="form-control" [(ngModel)]="carObj.regNo"  name="regNo" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label  class="form-label">Image URL</label>
+                            <input type="text" class="form-control" [(ngModel)]="carObj.carImage"  name="carImage" required>
+                          </div>
+                        <div class="col-12">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <label class="form-check-label" for="invalidCheck2">
+                              Agree to terms and conditions
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-12 ">
+                          <button class="btn btn-primary " type="submit" (click)="onSaveCar()">Submit form</button> &nbsp;
+                          <button class="btn btn-primary" type="submit">Reset form</button>
+                        </div>
+                     
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

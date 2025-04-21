@@ -11,6 +11,11 @@ import { ConditionalComponent } from './conditional/conditional.component';
 import { SignalComponent } from './signal/signal.component';
 import { LinkedsignalComponent } from './linkedsignal/linkedsignal.component';
 import { TemplateFormsComponent } from './template-forms/template-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { GETAPIComponent } from './API/get-api/get-api.component';
+import { POSTAPIComponent } from './API/post-api/post-api.component';
+import { PutApiComponent } from './API/put-api/put-api.component';
+import { DeleteApiComponent } from './API/delete-api/delete-api.component';
 
 export const routes: Routes = [{
     path:'',
@@ -61,5 +66,25 @@ export const routes: Routes = [{
     {
         path:"template-forms",
         component:TemplateFormsComponent
+    },
+    {
+        path:"reactive-forms",
+        component:ReactiveFormsComponent
+    },
+    {
+        path:'get-api',
+        component:GETAPIComponent
+    },
+    {
+        path:'post-api',
+        component:POSTAPIComponent
+    },
+    {
+        path:'put-api',
+        component:PutApiComponent
+    },
+    {
+        path:'delete-api',
+        component:DeleteApiComponent
     }
 ];
