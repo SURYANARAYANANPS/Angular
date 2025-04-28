@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject,  } from '@angular/core';
+import { Component, inject, OnInit,  } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,10 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
-export class POSTAPIComponent {
+export class POSTAPIComponent implements OnInit {
+  ngOnInit(): void {
+    this.getCars();
+  }
 
   carList :any[]=[];
   carObj:any={

@@ -16,6 +16,10 @@ import { GETAPIComponent } from './API/get-api/get-api.component';
 import { POSTAPIComponent } from './API/post-api/post-api.component';
 import { PutApiComponent } from './API/put-api/put-api.component';
 import { DeleteApiComponent } from './API/delete-api/delete-api.component';
+import { ResourseAPIComponent } from './resourse-api/resourse-api.component';
+import { CurrencyPipe } from '@angular/common';
+import { CustomerComponent } from './API/customer/customer.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 export const routes: Routes = [{
     path:'',
@@ -86,5 +90,17 @@ export const routes: Routes = [{
     {
         path:'delete-api',
         component:DeleteApiComponent
+    },{
+    path:"resourse-api",
+    component:ResourseAPIComponent
+
+    },
+    {
+        path:"customer",
+        component:CustomerComponent
+    },
+    {
+        path:"lifecycle",
+        component:LifecycleComponent
     }
 ];

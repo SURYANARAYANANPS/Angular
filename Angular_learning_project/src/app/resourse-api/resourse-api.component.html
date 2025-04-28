@@ -1,0 +1,28 @@
+<p>resourse-api works!</p>
+
+<div class="row">
+    <div class="col-3">
+        {{userList.hasValue()}}
+    </div>
+
+    <ul>
+        @for (item of userList.value(); track $index){
+
+        
+        <li> {{item.name}} - {{item.username}}
+
+        </li>
+    }
+    </ul>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="reloaddata()">reload</button>
+    </div>
+
+    <div class="col-3">
+
+        {{userList.isLoading()}}
+    </div>
+    <div class="row">
+ 
+    </div>
+</div>
